@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="life ring">
+  <circle cx="64" cy="64" r="48" fill="#f8fafc" stroke="#1f2937" stroke-width="5"/>
+  <circle cx="64" cy="64" r="23" fill="#ffffff" stroke="#1f2937" stroke-width="5"/>
+  <path d="M42 23l12 25M86 23L74 48M42 105l12-25M86 105L74 80" stroke="#ef4444" stroke-width="17" stroke-linecap="round"/>
+  <path d="M25 43l24 11M103 43L79 54M25 85l24-11M103 85L79 74" stroke="#ef4444" stroke-width="17" stroke-linecap="round"/>
+  <path d="M30 64h12M86 64h12M64 30v12M64 86v12" stroke="#1f2937" stroke-width="4" stroke-linecap="round"/>
+</svg>

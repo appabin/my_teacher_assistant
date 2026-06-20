@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 128" role="img" aria-label="measuring tape">
+  <circle cx="65" cy="67" r="44" fill="#fbbf24" stroke="#1f2937" stroke-width="5"/>
+  <circle cx="65" cy="67" r="18" fill="#fde68a" stroke="#1f2937" stroke-width="4"/>
+  <path d="M100 67h57v32H98c-9 0-14-7-14-15s6-17 16-17z" fill="#bfdbfe" stroke="#1f2937" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M111 67v18M126 67v12M141 67v18" stroke="#1f2937" stroke-width="3"/>
+  <path d="M50 44c17-10 39 3 39 23 0 21-22 34-39 23" fill="none" stroke="#fff7ed" stroke-width="5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="hundred flat">
+  <rect x="10" y="10" width="108" height="108" rx="8" fill="#d1fae5" stroke="#1f2937" stroke-width="4"/>
+  <g stroke="#34d399" stroke-width="1.7">
+    <path d="M21 10v108M32 10v108M43 10v108M54 10v108M64 10v108M75 10v108M86 10v108M97 10v108M108 10v108"/>
+    <path d="M10 21h108M10 32h108M10 43h108M10 54h108M10 64h108M10 75h108M10 86h108M10 97h108M10 108h108"/>
+  </g>
+</svg>

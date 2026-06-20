@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{LESSON_TITLE}}</title>
+  <style>
+    :root { --ink:#182230; --muted:#667085; --line:#d0d5dd; --bg:#f3f6fb; --blue:#2563eb; --green:#047857; --orange:#f59e0b; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+    .shell { min-height:100vh; padding:14px; display:grid; grid-template-rows:auto 1fr; gap:12px; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    h1 { margin:0; font-size:28px; letter-spacing:0; }
+    .tabs { display:flex; gap:8px; flex-wrap:wrap; }
+    button { min-height:40px; border:1px solid var(--line); border-radius:8px; background:#fff; padding:0 14px; font-weight:700; cursor:pointer; }
+    button.active { background:var(--blue); color:#fff; border-color:var(--blue); }
+    main { display:grid; grid-template-columns:1fr 320px; gap:12px; }
+    .stage, aside { border:1px solid var(--line); border-radius:8px; background:#fff; padding:14px; }
+    .stage { min-height:520px; display:grid; grid-template-rows:1fr auto; gap:12px; }
+    .grid { align-self:center; justify-self:center; display:grid; grid-template-columns:repeat(var(--cols),36px); grid-template-rows:repeat(var(--rows),36px); border:3px solid #1f2937; background:#fff; }
+    .cell { width:36px; height:36px; border:1px solid #bfdbfe; }
+    .cell.fill { background:#fde68a; }
+    .feedback { border:1px solid var(--line); border-radius:8px; background:#f8fafc; padding:12px; font-size:20px; font-weight:800; }
+    aside { display:grid; align-content:start; gap:14px; }
+    label { display:grid; gap:8px; color:var(--muted); font-size:14px; }
+    input { width:100%; }
+    @media (max-width:900px) { main { grid-template-columns:1fr; } h1 { font-size:22px; } .grid { grid-template-columns:repeat(var(--cols),28px); grid-template-rows:repeat(var(--rows),28px); } .cell { width:28px; height:28px; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <h1>{{LESSON_TITLE}}</h1>
+      <nav class="tabs">
+        <button class="active" data-view="area">面积</button>
+        <button data-view="perimeter">周长</button>
+        <button data-view="compose">拼组变化</button>
+      </nav>
+    </header>
+    <main>
+      <section class="stage">
+        <div class="grid" id="grid"></div>
+        <div class="feedback" id="feedback"></div>
+      </section>
+      <aside id="controls"></aside>
+    </main>
+  </div>
+  <script>
+    const state = { width: 6, height: 4, view: "area" };
+    function render() {
+      grid.style.setProperty("--cols", state.width);
+      grid.style.setProperty("--rows", state.height);
+      grid.innerHTML = Array.from({length:state.width * state.height}, () => `<span class="cell fill"></span>`).join("");
+      const area = state.width * state.height;
+      const perimeter = (state.width + state.height) * 2;
+      feedback.textContent = state.view === "perimeter" ? `周长是 ${state.width}+${state.height}+${state.width}+${state.height}=${perimeter}` : `面积是 ${state.width} 行，每行 ${state.height} 个，共 ${area} 个小方格。`;
+      controls.innerHTML = `
+        <label>长 <input data-key="width" type="range" min="1" max="12" value="${state.width}"></label>
+        <label>宽 <input data-key="height" type="range" min="1" max="10" value="${state.height}"></label>
+      `;
+      controls.querySelectorAll("input").forEach(input => input.addEventListener("input", event => {
+        state[event.target.dataset.key] = Number(event.target.value);
+        render();
+      }));
+    }
+    document.querySelectorAll(".tabs button").forEach(button => button.addEventListener("click", () => {
+      document.querySelectorAll(".tabs button").forEach(item => item.classList.toggle("active", item === button));
+      state.view = button.dataset.view;
+      render();
+    }));
+    render();
+  </script>
+</body>
+</html>

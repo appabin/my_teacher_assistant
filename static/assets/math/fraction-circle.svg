@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="fraction circle">
+  <circle cx="64" cy="64" r="50" fill="#eef2ff" stroke="#1f2937" stroke-width="4"/>
+  <path d="M64 64V14a50 50 0 0 1 43.3 75z" fill="#fbbf24" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M64 64L20.7 89A50 50 0 0 1 64 14z" fill="#60a5fa" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M64 64l43.3 25a50 50 0 0 1-86.6 0z" fill="#a7f3d0" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+</svg>

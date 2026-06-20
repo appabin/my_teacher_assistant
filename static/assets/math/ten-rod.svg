@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" role="img" aria-label="ten rod">
+  <rect x="4" y="8" width="212" height="40" rx="8" fill="#bfdbfe" stroke="#1f2937" stroke-width="4"/>
+  <g stroke="#1f2937" stroke-width="3">
+    <path d="M25 8v40M46 8v40M67 8v40M88 8v40M109 8v40M130 8v40M151 8v40M172 8v40M193 8v40"/>
+  </g>
+</svg>

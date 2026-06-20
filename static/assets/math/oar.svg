@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 128" role="img" aria-label="oars">
+  <defs>
+    <linearGradient id="paddle" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fcd34d"/>
+      <stop offset="1" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <path d="M28 104L119 22" stroke="#7c2d12" stroke-width="9" stroke-linecap="round"/>
+  <path d="M41 24l91 80" stroke="#7c2d12" stroke-width="9" stroke-linecap="round"/>
+  <path d="M111 16c15-12 31-10 35 1s-6 24-26 26z" fill="url(#paddle)" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M14 107c-1-19 8-31 21-29s18 19 10 35z" fill="url(#paddle)" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M27 15c20-1 31 9 29 22s-19 17-35 8z" fill="url(#paddle)" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M114 82c19-1 31 9 29 22s-19 17-35 8z" fill="url(#paddle)" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+</svg>

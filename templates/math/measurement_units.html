@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{LESSON_TITLE}}</title>
+  <style>
+    :root { --ink:#182230; --muted:#667085; --line:#d0d5dd; --bg:#f4f7fb; --blue:#2563eb; --green:#047857; --amber:#b45309; --panel:#fff; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+    .shell { min-height:100vh; padding:14px; display:grid; grid-template-rows:auto 1fr; gap:12px; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    h1 { margin:0; font-size:28px; letter-spacing:0; }
+    .tabs { display:flex; gap:8px; flex-wrap:wrap; }
+    button { min-height:40px; border:1px solid var(--line); border-radius:8px; background:#fff; padding:0 14px; font-weight:700; cursor:pointer; }
+    button.active { background:var(--blue); color:#fff; border-color:var(--blue); }
+    main { display:grid; grid-template-columns:minmax(0,1fr) 330px; gap:12px; }
+    .stage, aside { border:1px solid var(--line); border-radius:8px; background:var(--panel); padding:14px; }
+    .stage { min-height:520px; display:grid; grid-template-rows:auto 1fr auto; gap:12px; }
+    .visual { min-height:300px; border:1px dashed #aeb8c8; border-radius:8px; background:#f8fafc; display:grid; align-content:center; justify-items:center; gap:18px; padding:18px; }
+    .tool-row { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:16px; }
+    .tool { min-width:150px; min-height:150px; border:1px solid var(--line); border-radius:8px; background:#fff; display:grid; place-items:center; padding:12px; text-align:center; font-weight:800; }
+    .tool img { max-width:132px; max-height:92px; object-fit:contain; }
+    .strip { width:min(720px,100%); height:42px; border:3px solid #1f2937; border-radius:8px; background:repeating-linear-gradient(90deg,#bfdbfe 0,#bfdbfe 30px,#dbeafe 30px,#dbeafe 60px); position:relative; }
+    .strip::after { content:""; position:absolute; top:-10px; bottom:-10px; left:var(--mark); width:4px; border-radius:4px; background:#ef4444; }
+    .metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+    .metrics div { border:1px solid var(--line); border-radius:8px; background:#f8fafc; padding:10px; }
+    .metrics strong { display:block; margin-top:4px; font-size:28px; color:var(--blue); }
+    .feedback { min-height:64px; border:1px solid var(--line); border-radius:8px; background:#fff; padding:12px; font-size:18px; font-weight:800; }
+    aside { display:grid; align-content:start; gap:14px; }
+    label { display:grid; gap:8px; color:var(--muted); font-size:14px; }
+    input { width:100%; min-height:34px; }
+    @media (max-width:900px) { main { grid-template-columns:1fr; } h1 { font-size:22px; } .metrics { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <h1>{{LESSON_TITLE}}</h1>
+      <nav class="tabs">
+        <button class="active" data-view="length">长度换算</button>
+        <button data-view="mass">质量估测</button>
+        <button data-view="angle">角度观察</button>
+      </nav>
+    </header>
+    <main>
+      <section class="stage">
+        <div class="metrics" id="metrics"></div>
+        <div class="visual" id="visual"></div>
+        <div class="feedback" id="feedback"></div>
+      </section>
+      <aside id="controls"></aside>
+    </main>
+  </div>
+  <script>
+    const ASSETS = {
+      ruler: "/static/assets/math/ruler.svg",
+      tape: "/static/assets/math/measuring-tape.svg",
+      scale: "/static/assets/math/kitchen-scale.svg",
+      protractor: "/static/assets/math/protractor.svg"
+    };
+    const state = { view:"length", cm:120, kg:3, g:500, angle:60 };
+    function setView(view) {
+      state.view = view;
+      document.querySelectorAll(".tabs button").forEach(button => button.classList.toggle("active", button.dataset.view === view));
+      render();
+    }
+    function renderLength() {
+      const meters = Math.floor(state.cm / 100);
+      const rest = state.cm % 100;
+      metrics.innerHTML = `<div>厘米<strong>${state.cm} cm</strong></div><div>米<strong>${(state.cm / 100).toFixed(2)} m</strong></div><div>拆分<strong>${meters} m ${rest} cm</strong></div>`;
+      visual.innerHTML = `<div class="tool-row"><div class="tool"><img src="${ASSETS.ruler}" alt="直尺"><span>1 米 = 100 厘米</span></div><div class="tool"><img src="${ASSETS.tape}" alt="卷尺"><span>把厘米按 100 一组</span></div></div><div class="strip" style="--mark:${Math.min(100, state.cm / 2)}%"></div>`;
+      feedback.textContent = `换算长度时先找进率。厘米到米，要看有几个 100 厘米。`;
+      controls.innerHTML = `<label>厘米数 <input data-key="cm" type="range" min="1" max="300" value="${state.cm}"></label>`;
+    }
+    function renderMass() {
+      const grams = state.kg * 1000 + state.g;
+      metrics.innerHTML = `<div>千克<strong>${state.kg} kg</strong></div><div>克<strong>${state.g} g</strong></div><div>合计<strong>${grams} g</strong></div>`;
+      visual.innerHTML = `<div class="tool-row"><div class="tool"><img src="${ASSETS.scale}" alt="秤"><span>${state.kg} 千克 ${state.g} 克</span></div><div class="tool"><strong>1 千克 = 1000 克</strong></div></div>`;
+      feedback.textContent = `把 ${state.kg} 千克先换成 ${state.kg * 1000} 克，再加 ${state.g} 克。`;
+      controls.innerHTML = `<label>千克 <input data-key="kg" type="range" min="0" max="10" value="${state.kg}"></label><label>克 <input data-key="g" type="range" min="0" max="950" step="50" value="${state.g}"></label>`;
+    }
+    function renderAngle() {
+      metrics.innerHTML = `<div>角度<strong>${state.angle}°</strong></div><div>类型<strong>${state.angle < 90 ? "锐角" : state.angle === 90 ? "直角" : "钝角"}</strong></div><div>比较<strong>${state.angle - 90}°</strong></div>`;
+      visual.innerHTML = `<div class="tool-row"><div class="tool"><img src="${ASSETS.protractor}" alt="量角器"><span>从 0 刻度开始读</span></div><div class="tool"><strong>角的一边对准 0°</strong></div></div>`;
+      feedback.textContent = `先判断和 90° 的关系，再读量角器上的刻度。`;
+      controls.innerHTML = `<label>角度 <input data-key="angle" type="range" min="0" max="180" step="5" value="${state.angle}"></label>`;
+    }
+    function bindControls() {
+      controls.querySelectorAll("[data-key]").forEach(input => input.addEventListener("input", event => {
+        state[event.target.dataset.key] = Number(event.target.value);
+        render();
+      }));
+    }
+    function render() {
+      if (state.view === "length") renderLength();
+      if (state.view === "mass") renderMass();
+      if (state.view === "angle") renderAngle();
+      bindControls();
+    }
+    document.querySelectorAll(".tabs button").forEach(button => button.addEventListener("click", () => setView(button.dataset.view)));
+    render();
+  </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="apple">
+  <defs>
+    <linearGradient id="appleRed" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fb7185"/>
+      <stop offset="1" stop-color="#dc2626"/>
+    </linearGradient>
+  </defs>
+  <path d="M64 39c13-13 38-6 43 19 6 29-12 56-30 56-6 0-9-3-13-3s-7 3-13 3c-18 0-36-27-30-56 5-25 30-32 43-19z" fill="url(#appleRed)" stroke="#1f2937" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M64 39c-1-15 6-24 17-29" fill="none" stroke="#5b3419" stroke-width="6" stroke-linecap="round"/>
+  <path d="M77 18c16-2 25 6 25 6-9 9-20 10-32 4 0 0 2-8 7-10z" fill="#22c55e" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M39 63c3-8 9-13 17-15" fill="none" stroke="#fecdd3" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+</svg>

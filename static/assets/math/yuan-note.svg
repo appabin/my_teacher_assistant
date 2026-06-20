@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 108" role="img" aria-label="yuan note">
+  <rect x="8" y="14" width="164" height="80" rx="10" fill="#d1fae5" stroke="#1f2937" stroke-width="5"/>
+  <rect x="22" y="27" width="136" height="54" rx="8" fill="#a7f3d0" stroke="#047857" stroke-width="3"/>
+  <circle cx="90" cy="54" r="21" fill="#fef3c7" stroke="#1f2937" stroke-width="4"/>
+  <path d="M79 42l11 13 11-13M83 59h14M83 69h14M90 55v20" fill="none" stroke="#1f2937" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="32" y="59" fill="#047857" font-family="Arial, sans-serif" font-size="20" font-weight="700">10</text>
+  <text x="130" y="59" fill="#047857" font-family="Arial, sans-serif" font-size="20" font-weight="700">10</text>
+</svg>

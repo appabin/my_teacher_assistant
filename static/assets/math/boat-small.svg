@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 128" role="img" aria-label="small boat">
+  <defs>
+    <linearGradient id="hull" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" x2="1">
+      <stop offset="0" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#14b8a6"/>
+    </linearGradient>
+  </defs>
+  <path d="M31 63h118c-7 26-24 43-51 48H72c-22-5-36-21-41-48z" fill="url(#hull)" stroke="#1f2937" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M53 63l13-23h50l13 23z" fill="#fde68a" stroke="#1f2937" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M74 41v22M105 41v22" stroke="#1f2937" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="73" cy="82" r="8" fill="#fee2e2" stroke="#1f2937" stroke-width="4"/>
+  <circle cx="105" cy="82" r="8" fill="#dbeafe" stroke="#1f2937" stroke-width="4"/>
+  <path d="M19 111c18-10 35-10 53 0s35 10 53 0 27-9 38-3" fill="none" stroke="url(#water)" stroke-width="7" stroke-linecap="round"/>
+</svg>

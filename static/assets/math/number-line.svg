@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 72" role="img" aria-label="number line">
+  <path d="M20 36h220" stroke="#1f2937" stroke-width="4" stroke-linecap="round"/>
+  <path d="M240 36l-13-10M240 36l-13 10" stroke="#1f2937" stroke-width="4" stroke-linecap="round"/>
+  <g fill="#1f2937" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">
+    <text x="28" y="62">0</text><text x="68" y="62">1</text><text x="108" y="62">2</text><text x="148" y="62">3</text><text x="188" y="62">4</text><text x="228" y="62">5</text>
+  </g>
+  <g stroke="#1f2937" stroke-width="3">
+    <path d="M28 25v22M68 25v22M108 25v22M148 25v22M188 25v22M228 25v22"/>
+  </g>
+  <path d="M68 28c20-22 60-22 80 0" fill="none" stroke="#ef4444" stroke-width="4" stroke-linecap="round"/>
+  <path d="M148 28l-11-2 6-9" fill="none" stroke="#ef4444" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

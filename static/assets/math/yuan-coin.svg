@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="yuan coin">
+  <circle cx="64" cy="64" r="52" fill="#fde68a" stroke="#1f2937" stroke-width="5"/>
+  <circle cx="64" cy="64" r="40" fill="#fbbf24" stroke="#b45309" stroke-width="4"/>
+  <path d="M42 37l22 26 22-26M50 68h28M50 82h28M64 63v31" fill="none" stroke="#1f2937" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" role="img" aria-label="fraction bar">
+  <rect x="5" y="12" width="210" height="40" rx="7" fill="#eef2ff" stroke="#1f2937" stroke-width="4"/>
+  <path d="M5 12h105v40H5z" fill="#60a5fa"/>
+  <path d="M57.5 12v40M110 12v40M162.5 12v40" stroke="#1f2937" stroke-width="4"/>
+</svg>

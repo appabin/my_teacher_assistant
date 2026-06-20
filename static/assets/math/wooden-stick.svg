@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 128" role="img" aria-label="wooden counting sticks">
+  <defs>
+    <linearGradient id="stick" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f6c177"/>
+      <stop offset="1" stop-color="#b96926"/>
+    </linearGradient>
+  </defs>
+  <rect x="26" y="24" width="16" height="86" rx="8" fill="url(#stick)" stroke="#1f2937" stroke-width="4" transform="rotate(-10 34 67)"/>
+  <rect x="55" y="18" width="16" height="94" rx="8" fill="url(#stick)" stroke="#1f2937" stroke-width="4" transform="rotate(3 63 65)"/>
+  <rect x="84" y="24" width="16" height="86" rx="8" fill="url(#stick)" stroke="#1f2937" stroke-width="4" transform="rotate(10 92 67)"/>
+  <rect x="113" y="30" width="16" height="76" rx="8" fill="url(#stick)" stroke="#1f2937" stroke-width="4" transform="rotate(-5 121 68)"/>
+  <path d="M22 102c29 12 81 13 116 2" fill="none" stroke="#94a3b8" stroke-width="5" stroke-linecap="round" opacity=".45"/>
+  <path d="M31 34h10M59 30h10M88 37h10M116 40h10" stroke="#fff3d2" stroke-width="3" stroke-linecap="round"/>
+</svg>

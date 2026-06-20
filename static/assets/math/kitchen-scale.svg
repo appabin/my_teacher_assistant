@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 128" role="img" aria-label="kitchen scale">
+  <path d="M44 42h72l-12 76H56z" fill="#dbeafe" stroke="#1f2937" stroke-width="5" stroke-linejoin="round"/>
+  <rect x="28" y="18" width="104" height="28" rx="8" fill="#a7f3d0" stroke="#1f2937" stroke-width="5"/>
+  <circle cx="80" cy="82" r="22" fill="#fff" stroke="#1f2937" stroke-width="4"/>
+  <path d="M80 82l13-12" stroke="#ef4444" stroke-width="5" stroke-linecap="round"/>
+  <path d="M67 82h-8M93 82h8M80 69v-8" stroke="#1f2937" stroke-width="3" stroke-linecap="round"/>
+</svg>

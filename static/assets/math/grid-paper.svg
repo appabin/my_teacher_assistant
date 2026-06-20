@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="grid paper">
+  <rect x="7" y="7" width="114" height="114" rx="8" fill="#ffffff" stroke="#1f2937" stroke-width="4"/>
+  <g stroke="#bfdbfe" stroke-width="2">
+    <path d="M21 7v114M36 7v114M50 7v114M64 7v114M78 7v114M92 7v114M107 7v114"/>
+    <path d="M7 21h114M7 36h114M7 50h114M7 64h114M7 78h114M7 92h114M7 107h114"/>
+  </g>
+  <path d="M36 92V36h56v56z" fill="#fde68a" stroke="#1f2937" stroke-width="4"/>
+</svg>

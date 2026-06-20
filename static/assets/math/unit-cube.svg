@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="unit cube">
+  <path d="M24 43l40-23 40 23-40 23z" fill="#93c5fd" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M24 43v43l40 23V66z" fill="#60a5fa" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M104 43v43l-40 23V66z" fill="#2563eb" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M41 53l40-23M46 95V56M83 95V56" opacity=".35" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+</svg>

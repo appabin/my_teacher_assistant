@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小学互动课件生成器</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="workspace">
+      <header class="topbar">
+        <div>
+          <h1>小学互动课件生成器</h1>
+          <p id="configStatus">读取配置中...</p>
+        </div>
+        <button id="generateBtn" type="button">生成课件</button>
+      </header>
+
+      <div class="content-grid">
+        <form id="workflowForm" class="panel input-panel">
+          <label class="field">
+            <span>课本截图</span>
+            <input id="imagesInput" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/bmp" multiple required>
+          </label>
+          <div id="previewList" class="preview-list"></div>
+
+          <label class="field">
+            <span>重点关注</span>
+            <textarea id="focusInput" rows="5" placeholder="例如：鸡兔同笼里的头数、脚数关系；希望学生理解假设法"></textarea>
+          </label>
+
+          <label class="field">
+            <span>年级/学段</span>
+            <input id="gradeInput" type="text" placeholder="例如：四年级数学">
+          </label>
+
+          <label class="switch-row">
+            <input id="dryRunInput" type="checkbox">
+            <span>模拟运行</span>
+          </label>
+
+          <div class="progress-card" aria-live="polite">
+            <div class="progress-row">
+              <span id="progressLabel">等待开始</span>
+              <strong id="progressPercent">0%</strong>
+            </div>
+            <div class="progress-track">
+              <div id="progressBar" class="progress-bar"></div>
+            </div>
+            <div class="progress-detail">
+              <span id="currentStep">上传截图后开始处理</span>
+              <span id="elapsedTime">0.0 秒</span>
+            </div>
+          </div>
+
+          <ol class="steps" id="steps">
+            <li data-step="upload">等待截图</li>
+            <li data-step="vision">识别教材信息</li>
+            <li data-step="template">匹配模板素材</li>
+            <li data-step="page">生成互动网页</li>
+            <li data-step="quality">检查页面质量</li>
+            <li data-step="script">生成引导文案</li>
+            <li data-step="saving">保存产物</li>
+          </ol>
+        </form>
+
+        <section class="panel result-panel">
+          <div class="result-head">
+            <div>
+              <h2 id="resultTitle">生成结果</h2>
+              <p id="resultMeta">课件会显示在这里</p>
+            </div>
+            <a id="openPageLink" href="#" target="_blank" rel="noopener">打开网页</a>
+          </div>
+
+          <div id="emptyState" class="empty-state">上传截图后开始生成。</div>
+
+          <div id="resultView" class="result-view hidden">
+            <iframe id="pageFrame" title="互动课件预览" sandbox="allow-scripts"></iframe>
+            <div class="summary-grid" id="summaryGrid">
+              <div class="summary-card">
+                <span>模板</span>
+                <strong id="templateSummary">-</strong>
+              </div>
+              <div class="summary-card">
+                <span>质量检查</span>
+                <strong id="qualitySummary">-</strong>
+              </div>
+              <div class="summary-card">
+                <span>模型链路</span>
+                <strong id="providerSummary">-</strong>
+              </div>
+            </div>
+            <div class="artifact-links" id="artifactLinks"></div>
+            <div class="artifact-grid">
+              <div class="artifact">
+                <h3>引导语音</h3>
+                <audio id="audioPlayer" controls></audio>
+              </div>
+              <div class="artifact">
+                <h3>引导文案</h3>
+                <p id="scriptText"></p>
+              </div>
+              <div class="artifact wide">
+                <h3>截图识别 JSON</h3>
+                <pre id="analysisJson"></pre>
+              </div>
+              <div class="artifact wide">
+                <h3>HTML 质量报告</h3>
+                <pre id="qualityJson"></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

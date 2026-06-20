@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 72" role="img" aria-label="ruler">
+  <rect x="8" y="16" width="204" height="40" rx="8" fill="#fde68a" stroke="#1f2937" stroke-width="4"/>
+  <g stroke="#1f2937" stroke-width="3">
+    <path d="M24 16v22M44 16v14M64 16v22M84 16v14M104 16v22M124 16v14M144 16v22M164 16v14M184 16v22M204 16v14"/>
+  </g>
+  <g fill="#1f2937" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">
+    <text x="24" y="51">0</text><text x="64" y="51">1</text><text x="104" y="51">2</text><text x="144" y="51">3</text><text x="184" y="51">4</text>
+  </g>
+</svg>

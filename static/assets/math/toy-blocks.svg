@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 128" role="img" aria-label="toy blocks">
+  <path d="M25 75l34-20 34 20-34 20z" fill="#bfdbfe" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M25 75v29l34 20V95z" fill="#60a5fa" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M93 75v29l-34 20V95z" fill="#2563eb" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M75 44l34-20 34 20-34 20z" fill="#fde68a" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M75 44v29l34 20V64z" fill="#fbbf24" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M143 44v29l-34 20V64z" fill="#f59e0b" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M51 68l16 10M101 37l16 10M43 103V80M92 72V51" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".6"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="clock face">
+  <circle cx="64" cy="64" r="52" fill="#ffffff" stroke="#1f2937" stroke-width="5"/>
+  <g fill="#1f2937" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" dominant-baseline="middle">
+    <text x="64" y="22">12</text><text x="104" y="65">3</text><text x="64" y="106">6</text><text x="24" y="65">9</text>
+  </g>
+  <path d="M64 64V35M64 64l24 15" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="64" cy="64" r="6" fill="#ef4444"/>
+</svg>

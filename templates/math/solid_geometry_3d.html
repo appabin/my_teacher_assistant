@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{LESSON_TITLE}}</title>
+  <style>
+    :root { --ink:#182230; --muted:#667085; --line:#d0d5dd; --bg:#f3f6fb; --blue:#2563eb; --green:#047857; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+    .shell { min-height:100vh; padding:14px; display:grid; grid-template-rows:auto 1fr; gap:12px; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    h1 { margin:0; font-size:28px; letter-spacing:0; }
+    .tabs { display:flex; gap:8px; flex-wrap:wrap; }
+    button { min-height:40px; border:1px solid var(--line); border-radius:8px; background:#fff; padding:0 14px; font-weight:700; cursor:pointer; }
+    button.active { background:var(--blue); border-color:var(--blue); color:#fff; }
+    main { display:grid; grid-template-columns:1fr 320px; gap:12px; min-height:0; }
+    .stage, aside { border:1px solid var(--line); border-radius:8px; background:#fff; padding:14px; }
+    #viewer { min-height:520px; width:100%; border-radius:8px; overflow:hidden; background:#eef2ff; position:relative; }
+    #fallback { position:absolute; inset:0; display:none; place-items:center; padding:20px; text-align:center; color:var(--muted); font-weight:700; }
+    aside { display:grid; align-content:start; gap:14px; }
+    .metric { border:1px solid var(--line); border-radius:8px; background:#f8fafc; padding:12px; }
+    @media (max-width:900px) { main { grid-template-columns:1fr; } h1 { font-size:22px; } #viewer { min-height:420px; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <h1>{{LESSON_TITLE}}</h1>
+      <nav class="tabs">
+        <button class="active" data-view="free">自由观察</button>
+        <button data-view="front">正面</button>
+        <button data-view="top">上面</button>
+        <button data-view="side">侧面</button>
+      </nav>
+    </header>
+    <main>
+      <section class="stage">
+        <div id="viewer"><div id="fallback">3D 引擎加载失败，请检查网络后刷新</div></div>
+      </section>
+      <aside>
+        <div class="metric" id="metric"></div>
+        <button id="resetView">重置视角</button>
+      </aside>
+    </main>
+  </div>
+  <script type="module">
+    const container = document.getElementById("viewer");
+    const fallback = document.getElementById("fallback");
+    import("/static/vendor/three.module.js").then(({ default: THREE }) => {
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0xeef2ff);
+      const camera = new THREE.OrthographicCamera(-5,5,3.2,-3.2,0.1,100);
+      camera.position.set(6,5,6);
+      camera.lookAt(0,0,0);
+      const renderer = new THREE.WebGLRenderer({ antialias:true });
+      renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+      container.appendChild(renderer.domElement);
+      scene.add(new THREE.AmbientLight(0xffffff, 0.8));
+      const light = new THREE.DirectionalLight(0xffffff, 1.2);
+      light.position.set(5,8,5);
+      scene.add(light);
+      const material = new THREE.MeshStandardMaterial({ color:0x60a5fa, roughness:0.55, metalness:0.02 });
+      const cube = new THREE.Mesh(new THREE.BoxGeometry(2.4,1.6,1.2), material);
+      scene.add(cube);
+      const grid = new THREE.GridHelper(8,8,0x64748b,0xcbd5e1);
+      scene.add(grid);
+      function resize() {
+        const w = container.clientWidth, h = container.clientHeight;
+        const aspect = w / h;
+        camera.left = -4.2 * aspect; camera.right = 4.2 * aspect; camera.top = 4.2; camera.bottom = -4.2;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h, false);
+      }
+      function render() { cube.rotation.y += 0.006; renderer.render(scene, camera); requestAnimationFrame(render); }
+      addEventListener("resize", resize);
+      resize();
+      render();
+    }).catch(() => { fallback.style.display = "grid"; });
+  </script>
+</body>
+</html>

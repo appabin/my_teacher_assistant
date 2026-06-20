@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 128" role="img" aria-label="two students">
+  <circle cx="62" cy="38" r="22" fill="#f9c9a6" stroke="#1f2937" stroke-width="4"/>
+  <path d="M40 36c3-17 18-25 34-17 8 4 11 11 10 20-10-7-23-7-35 1z" fill="#3b2f2f" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="55" cy="41" r="3" fill="#111827"/>
+  <circle cx="70" cy="41" r="3" fill="#111827"/>
+  <path d="M57 51c4 3 8 3 12 0" fill="none" stroke="#9f3a2f" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M31 112c4-29 15-44 31-44s27 15 31 44z" fill="#60a5fa" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="119" cy="38" r="22" fill="#ffd3b5" stroke="#1f2937" stroke-width="4"/>
+  <path d="M98 34c6-18 23-22 36-10 4 4 6 10 5 17-9-5-18-8-30-5-4 1-8 0-11-2z" fill="#6b3f24" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="112" cy="41" r="3" fill="#111827"/>
+  <circle cx="127" cy="41" r="3" fill="#111827"/>
+  <path d="M114 51c4 3 8 3 12 0" fill="none" stroke="#9f3a2f" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M88 112c4-29 15-44 31-44s27 15 31 44z" fill="#f472b6" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M85 82c9 9 21 9 29 0" fill="none" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/>
+</svg>

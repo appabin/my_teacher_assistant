@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="student">
+  <defs>
+    <linearGradient id="shirt" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="36" r="24" fill="#f9c9a6" stroke="#1f2937" stroke-width="4"/>
+  <path d="M41 33c3-19 18-27 37-20 12 4 18 13 17 24-10-7-25-8-39-1-5 2-10 1-15-3z" fill="#3b2f2f" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="55" cy="39" r="3.5" fill="#111827"/>
+  <circle cx="74" cy="39" r="3.5" fill="#111827"/>
+  <path d="M57 50c5 4 10 4 15 0" fill="none" stroke="#9f3a2f" stroke-width="4" stroke-linecap="round"/>
+  <path d="M33 111c3-30 14-45 31-45s28 15 31 45z" fill="url(#shirt)" stroke="#1f2937" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M48 75l16 15 16-15" fill="none" stroke="#dbeafe" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M35 84l-19 17M93 84l19 17" fill="none" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/>
+  <path d="M51 110v12M77 110v12M43 122h16M69 122h16" fill="none" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/>
+</svg>

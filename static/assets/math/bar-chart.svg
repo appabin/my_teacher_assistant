@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 128" role="img" aria-label="bar chart">
+  <path d="M24 16v92h116" fill="none" stroke="#1f2937" stroke-width="5" stroke-linecap="round"/>
+  <rect x="38" y="68" width="20" height="40" rx="4" fill="#60a5fa" stroke="#1f2937" stroke-width="3"/>
+  <rect x="70" y="44" width="20" height="64" rx="4" fill="#34d399" stroke="#1f2937" stroke-width="3"/>
+  <rect x="102" y="28" width="20" height="80" rx="4" fill="#fbbf24" stroke="#1f2937" stroke-width="3"/>
+  <g fill="#1f2937" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">
+    <text x="48" y="124">A</text><text x="80" y="124">B</text><text x="112" y="124">C</text>
+  </g>
+</svg>
